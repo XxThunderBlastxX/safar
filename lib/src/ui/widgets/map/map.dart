@@ -9,23 +9,20 @@ class MapView extends StatefulWidget {
   State<MapView> createState() => _MapViewState();
 }
 
+LatLng point = LatLng(22.723426, 88.478515);
+
 class _MapViewState extends State<MapView> {
   @override
   Widget build(BuildContext context) {
-    //LatLng(latitude:22.723426, longitude:88.478515)
-    LatLng point = LatLng(22.723426, 88.478515);
-    // var location = [];
     return Stack(
       children: [
         FlutterMap(
           options: MapOptions(
-            zoom: 10.0,
+            zoom: 14.5,
             center: point,
             onTap: (pos, p) {
               setState(() {
                 point = p;
-                print(point);
-                print(pos.global.isFinite);
               });
             },
           ),
@@ -43,6 +40,7 @@ class _MapViewState extends State<MapView> {
                     Icons.location_on,
                     color: Colors.red,
                   ),
+                  rotate: true,
                 )
               ],
             )

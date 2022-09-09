@@ -11,6 +11,12 @@ class HomeView extends ScreenView {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Safar'),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(12.0),
+            bottomRight: Radius.circular(12.0),
+          ),
+        ),
       ),
       body: const MapView(),
     );
